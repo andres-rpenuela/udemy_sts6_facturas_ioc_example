@@ -28,4 +28,7 @@ public class Invoice {
 	//@Qualifier("items")
 	private List<Item> items;
 	
+	public BigDecimal getTotal() {
+		return items.stream().map(Item::getTotal).reduce(new BigDecimal(0),BigDecimal::add);
+	}
 }
