@@ -25,7 +25,7 @@ public class Invoice {
 	private String description;
 	
 	@Autowired
-	//@Qualifier("items")
+	@Qualifier("itemsOficce")
 	private List<Item> items;
 	
 	public BigDecimal getTotal() {
