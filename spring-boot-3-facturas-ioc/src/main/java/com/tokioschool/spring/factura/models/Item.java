@@ -15,4 +15,8 @@ public class Item {
 	@Autowired
 	private Product product;
 	private BigDecimal stock;
+	
+	public BigDecimal getTotal() {
+		return this.stock.multiply(this.product.getPrice());
+	}
 }

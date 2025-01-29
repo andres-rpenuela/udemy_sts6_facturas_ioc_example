@@ -1,5 +1,6 @@
 package com.tokioschool.spring.factura.models;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,5 +27,5 @@ public class Invoice {
 	@Autowired
 	//@Qualifier("items")
 	private List<Item> items;
-
+	
 }
