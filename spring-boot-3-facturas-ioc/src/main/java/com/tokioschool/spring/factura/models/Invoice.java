@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -34,6 +35,11 @@ public class Invoice {
 		this.client.setName(this.client.getName().toUpperCase());
 		this.client.setLastname(this.client.getLastname().toUpperCase());
 		this.description = this.description.concat(" del cliente %s %s".formatted(this.client.getName(),this.client.getLastname()));
+	}
+	
+	@PreDestroy
+	public void destory() {
+		System.out.println("Destruyendo el componete Invoice, liberar recursos");
 	}
 	
 	public BigDecimal getTotal() {
